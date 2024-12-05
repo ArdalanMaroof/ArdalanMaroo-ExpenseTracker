@@ -6,28 +6,41 @@ The Expense Tracker with Budget Analysis is a WPF application that helps users t
 To run the application, ensure you have the following installed:
 
 - .NET Framework (WPF Application)
+  
 - Visual Studio with WPF support
+  
 - LiveCharts (Used for graphical charts):
+  
 - You can install this via NuGet package manager in Visual Studio.
 
 ## Features
+
 •	Set Monthly Budget: Allows the user to input a monthly budget and track expenses against it.
+
 •	Add Expense/Income: Users can add individual expense or income entries with a description, amount, and category.
+
 •	View Expenses: Displays a list of all expenses and income entries in a table format.
+
 •	Chart Visualization: Provides a line chart showing expenses and income trends over time.
+
 •	Budget Alert: Shows alerts when the total expenses exceed or approach the monthly budget.
+
 •	CSV Export: Allows users to export all their tracked expenses to a CSV file for easy reporting.
 
 ## Usage Instructions
 1.	Set Budget:
+   
 •	Enter your monthly budget in the text box and click Set Budget. The remaining budget will be updated.
 
-2.	Add Expense/Income:
+3.	Add Expense/Income:
+   
 •	Enter a description, amount, and category for the entry. Check the box if it is income.
+
 •	Click Add to save the entry.
+
 •	The expenses list, budget, and graph will update accordingly.
 
-3.	View Expenses List:
+5.	View Expenses List:
 
 •	All recorded expenses/income will be displayed in the Expenses List.
 •	You can edit an entry by selecting it from the list and clicking Save Edit/Changes after making updates.
