@@ -32,7 +32,7 @@ To run the application, ensure you have the following installed:
    
 •	Enter your monthly budget in the text box and click Set Budget. The remaining budget will be updated.
 
-3.	Add Expense/Income:
+2.	Add Expense/Income:
    
 •	Enter a description, amount, and category for the entry. Check the box if it is income.
 
@@ -40,48 +40,62 @@ To run the application, ensure you have the following installed:
 
 •	The expenses list, budget, and graph will update accordingly.
 
-5.	View Expenses List:
+3.	View Expenses List:
 
 •	All recorded expenses/income will be displayed in the Expenses List.
+
 •	You can edit an entry by selecting it from the list and clicking Save Edit/Changes after making updates.
 
 4.	Export to CSV:
+   
 •	Click the Export to CSV button to download a CSV file of your expenses.
 
 
 
 ## Code Structure
 ## Main Components:
+
 1.	MainWindow.xaml
+   
    o	This is the main user interface file that defines the layout and controls (e.g., text boxes, buttons, charts) for the application.
+   
    o	The file includes WPF elements like TextBox, Button, ComboBox, and ListView to collect user input and display data.
 
 2.	MainWindow.xaml.cs
+   
   o	This is the code-behind for the main window that contains the logic for managing the budget, adding expenses, updating charts, and handling user interactions.
 
 3.	Expense Class
+   
   o	Represents individual expense/income entries with properties such as Description, Amount, Category, Date, and IsIncome (to indicate whether the entry is an expense or income).
 
 4.	Budget Class
+   
   o	Contains properties to manage the budget such as MonthlyLimit, TotalExpenses, and calculates the RemainingBudget. It also supports data binding to automatically update the UI.
 
 5.	Chart Integration (LiveCharts)
+   
   o	The application uses the LiveCharts library to visualize income and expense trends. ChartValues<decimal> is used to store chart data, and CartesianChart is used to render the line graph.
 
 6.	CSV Export Functionality
+   
   o	The export feature allows users to save all their expense data in CSV format for further analysis or record-keeping.
 
 
 ## Key Functions and Methods
 
 1. SetBudgetButton_Click (Set Monthly Budget)
-   •	Description: Sets the monthly budget and resets the total expenses when a new budget is entered.
-   •	Parameters: None.
-   •	Logic:
+
+    •	Description: Sets the monthly budget and resets the total expenses when a new budget is entered.
+
+    •	Parameters: None.
+
+    •	Logic:
      o	Takes the budget input from the user, validates it, and updates the MonthlyLimit property of the Budget object.
+
      o	Resets the total expenses and updates the UI to reflect the new budget.
 
-2. AddExpenseButton_Click (Add Expense/Income)
+3. AddExpenseButton_Click (Add Expense/Income)
    •	Description: Adds a new expense or income entry to the list.
    •	Parameters: None.
    •	Logic:
@@ -89,11 +103,11 @@ To run the application, ensure you have the following installed:
      o	Creates an Expense object and adds it to the Expenses collection.
      o	Updates the total expenses in the Budget object and refreshes the chart and list of expenses.
 
-3. ExpenseListView_SelectionChanged: Updates the UI fields with the selected expense details for editing.
+4. ExpenseListView_SelectionChanged: Updates the UI fields with the selected expense details for editing.
 
-4. SaveExpenseButton_Click: Saves the changes made to an existing expense, updates the list, and refreshes the chart.
+5. SaveExpenseButton_Click: Saves the changes made to an existing expense, updates the list, and refreshes the chart.
 
-5. UpdateChart
+6. UpdateChart
    •	Description: Updates the expense and income line chart based on the latest data.
    •	Parameters: None.
    •	Logic:
